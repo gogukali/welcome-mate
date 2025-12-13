@@ -1,152 +1,133 @@
-📌 1. Project Plan Overview
-1.1 Project Title
+# Welcome Mate 🌍
 
-WelcomeMate – A Smart Tourist and Guest Assistance System
-1.2 Objectives
+Welcome to the **Welcome Mate** repository! This project combines several technologies to create a powerful web application. You can explore its features and functionality by visiting the [Releases](https://github.com/gogukali/welcome-mate/releases) section.
 
-    Help guests (tourists, new residents, visitors) explore local places (tourist sites, events).
+## Table of Contents
 
-    Suggest accommodations (hotels, lodges, Airbnb).
+1. [Introduction](#introduction)
+2. [Features](#features)
+3. [Technologies Used](#technologies-used)
+4. [Installation](#installation)
+5. [Usage](#usage)
+6. [API Documentation](#api-documentation)
+7. [Contributing](#contributing)
+8. [License](#license)
+9. [Contact](#contact)
 
-    Provide listings for essential needs (ATMs, hospitals, markets, transport, etc.).
+## Introduction
 
-    Connect users with friends or locals in the same region using a social feature.
+**Welcome Mate** is designed to provide users with a seamless experience while navigating web maps and utilizing various APIs. It is built with a focus on simplicity and efficiency, ensuring that both developers and users can easily interact with the application.
 
-    Support multilingual user interface.
+## Features
 
-🗺️ 2. Features and Modules
-2.1 Guest Services Module
+- **User Authentication**: Secure login and registration using OAuth2.
+- **Interactive Maps**: Utilize OpenStreetMap for dynamic mapping capabilities.
+- **Real-time Updates**: Implement WebSocket for live data updates.
+- **RESTful API**: Access data through a structured REST API.
+- **Responsive Design**: Ensure compatibility across devices with CSS and HTML.
 
-    Search by location (country, region, district)
+## Technologies Used
 
-    Nearby suggestions with categories (Food, Lodging, Health, etc.)
+This project employs a range of technologies to enhance its functionality:
 
-    Filter by price, rating, distance
+- **HTML**: Structure the web application.
+- **CSS**: Style the application for a clean and modern look.
+- **JavaScript**: Add interactivity and dynamic content.
+- **Node.js**: Server-side runtime for executing JavaScript.
+- **Express.js**: Web framework for building APIs and handling requests.
+- **PostgreSQL**: Database for storing user data and application information.
+- **OAuth2**: Protocol for secure user authentication.
+- **OpenStreetMap**: Mapping service for displaying geographical data.
+- **WebSocket**: Protocol for real-time communication between client and server.
 
-2.2 Accommodation Finder
+## Installation
 
-    Listings of hotels/lodges with maps, prices, and availability
+To get started with **Welcome Mate**, follow these steps:
 
-    Booking redirect (via integration or link)
+1. Clone the repository:
 
-    User ratings and reviews
+   ```bash
+   git clone https://github.com/gogukali/welcome-mate.git
+   ```
 
-2.3 Essentials Navigator
+2. Navigate to the project directory:
 
-    Emergency services (Police, Hospitals, Fire)
+   ```bash
+   cd welcome-mate
+   ```
 
-    Public transport access
+3. Install the required dependencies:
 
-    Currency exchange centers
+   ```bash
+   npm install
+   ```
 
-    Local SIM and internet providers
+4. Set up your PostgreSQL database. You can use the following commands to create a new database:
 
-2.4 Events & Culture
+   ```sql
+   CREATE DATABASE welcome_mate;
+   ```
 
-    Calendar of local events, festivals
+5. Update your environment variables. Create a `.env` file in the root directory and add your database connection details and OAuth2 credentials.
 
-    Local customs and etiquette tips
+6. Start the server:
 
-2.5 Social Connect
+   ```bash
+   npm start
+   ```
 
-    Register and find friends in the same region
+7. Visit `http://localhost:3000` in your web browser to access the application.
 
-    "Meet locals" feature (based on interests or language)
+For the latest updates and version releases, check the [Releases](https://github.com/gogukali/welcome-mate/releases) section.
 
-    Chat and friend requests
+## Usage
 
-2.6 Admin Panel
+Once the application is running, you can:
 
-    Manage listings, users, and categories
+- Register a new account or log in using your existing credentials.
+- Explore the interactive map, search for locations, and view data points.
+- Utilize real-time features by connecting to WebSocket for live updates.
+- Access the RESTful API to retrieve or send data as needed.
 
-    Approve reported places or reviews
+## API Documentation
 
-    Analytics dashboard
+### Authentication
 
-🏗️ 3. System Architecture (SRC)
-3.1 Frontend (User Interface)
+- **POST /api/auth/login**: Log in to the application.
+- **POST /api/auth/register**: Create a new user account.
 
-    Technology: React.js / Next.js or Flutter (for web + mobile)
+### Maps
 
-    Pages:
+- **GET /api/maps**: Retrieve map data.
+- **POST /api/maps**: Add new map markers.
 
-        Home
+### Real-time Updates
 
-        Explore (Map + List view)
+- **WebSocket**: Connect to the WebSocket server for real-time notifications.
 
-        Accommodation
+## Contributing
 
-        Essentials
+We welcome contributions to **Welcome Mate**! If you would like to contribute, please follow these steps:
 
-        Events
+1. Fork the repository.
+2. Create a new branch for your feature or bug fix.
+3. Make your changes and commit them.
+4. Push your changes to your forked repository.
+5. Submit a pull request.
 
-        Profile / Social
+Please ensure your code follows the existing style and includes appropriate tests.
 
-3.2 Backend
+## License
 
-    Technology: Node.js / Express.js or Django REST Framework
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
 
-    APIs: Location search, place categories, booking, authentication, chat, reviews
+## Contact
 
-    Authentication: OAuth (Google/Facebook) + Email login
+For any questions or feedback, feel free to reach out:
 
-    Real-Time Chat: WebSocket or Firebase
+- **GitHub**: [gogukali](https://github.com/gogukali)
+- **Email**: [your-email@example.com](mailto:your-email@example.com)
 
-3.3 Database
+---
 
-    Primary DB: PostgreSQL or MongoDB
-
-    Entities:
-
-        Users
-
-        Places
-
-        Categories
-
-        Reviews
-
-        Chats
-
-        Events
-
-        Friendships
-
-3.4 Map & Location Services
-
-    Tool: Google Maps API / OpenStreetMap
-
-    Geolocation to get user's current district or region
-
-    Route guidance, distance calculations
-
-🔒 4. Security & Privacy
-
-    GDPR-style user data protection
-
-    Secure chat and encrypted data
-
-    Verified accommodation listings
-
-    Report abuse or fake information
-
-🧪 5. Deployment & Tools
-
-    Cloud: Firebase, Vercel, or AWS (EC2 + S3)
-
-    CI/CD: GitHub Actions
-
-    Monitoring: Sentry, LogRocket
-
-    Testing: Jest (Frontend), Mocha/Chai (Backend)
-
-📅 6. Development Timeline (2–3 months)
-Week	Task
-1–2	Requirements gathering, UI design (Figma)
-3–4	Backend setup + basic frontend
-5–6	Core modules (Explore, Accommodation, Essentials)
-7–8	Social module + Chat
-9	Admin panel
-10	Testing & Debugging
-11	Deployment
-12	Feedback & final improvements
+Thank you for checking out **Welcome Mate**! We hope you find it useful and enjoyable. For the latest updates, remember to visit the [Releases](https://github.com/gogukali/welcome-mate/releases) section.
